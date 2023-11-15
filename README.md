@@ -1,58 +1,66 @@
-# algo-give
+# Algo-Starter
 
-This starter full stack project has been generated using AlgoKit. See below for default getting started instructions.
+This project is an Algorand crowdfunding initiative, designed to empower creators and supporters within the Algorand ecosystem.
 
 ## Setup
 
-### Initial setup
+### Initial Setup
 
 1. Clone this repository locally.
-2. Install pre-requisites:
-   - Make sure to have [Docker](https://www.docker.com/) installed and running on your machine.
-   - Install `AlgoKit` - [Link](https://github.com/algorandfoundation/algokit-cli#install): The minimum required version is `1.3.0`. Ensure you can execute `algokit --version` and get `1.3.0` or later.
-   - Bootstrap your local environment; run `algokit bootstrap all` within this folder, which will install Poetry, run `npm install` and `poetry install` in the root directory to install NPM and Python packages respectively, set up a `.venv` folder with a Python virtual environment and also install all Python dependencies.
-     - For TypeScript projects, it will also run `npm install` to install NPM packages.
-     - For all projects, it will copy `.env.template` to `.env`.
-   - Run `algokit localnet start` to start a local Algorand network in Docker. If you are using VS Code launch configurations provided by the template, this will be done automatically for you.
-3. Open the project and start debugging / developing on:
-   - [Backend](backend/README.md) - Refer to the README for more information on how to work with smart contracts.
-   - [Frontend](frontend/README.md) - Refer to the README for more information on how to work with the frontend application.
+2. Install prerequisites:
+   - [Docker](https://www.docker.com/)
+   - Install AlgoKit (minimum version: 1.1) - [Installation Link](https://github.com/algorandfoundation/algokit-cli#install)
+   - Bootstrap your local environment by running `algokit bootstrap all` within this folder.
+   - Run `algokit localnet start` to start a local Algorand network in Docker.
 
+### Development
 
-### Subsequently
+- **VS Code:**
+  1. Open the repository root in VS Code.
+  2. Install recommended extensions.
+  3. Hit F5 to start running with breakpoint debugging.
 
-1. If you update to the latest source code and there are new dependencies, you will need to run `algokit bootstrap all` again.
-2. Follow step 3 above.
+- **JetBrains IDEs:**
+  1. Open the repository root in the IDE.
+  2. It should automatically detect it's a Poetry project and set up a Python interpreter and virtual environment.
+  3. Hit Shift+F10|Ctrl+R to start running with breakpoint debugging.
 
-### Continuous Integration / Continuous Deployment (CI/CD)
+- **Other Editors:**
+  1. Open the repository root in your text editor.
+  2. In a terminal, run `poetry shell`.
+  3. Run `python -m smart_contracts` through your debugger of choice.
 
-This project uses [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) to define CI/CD workflows, which are located in the [`.github/workflows`](./.github/workflows) folder. You can configure these actions to suit your project's needs, including CI checks, audits, linting, type checking, testing, and deployments to TestNet.
+### Subsequent Use
 
-For pushes to `main` branch, after the above checks pass, the following deployment actions are performed:
-  - The smart contract(s) are deployed to TestNet using [AlgoNode](https://algonode.io).
-  - The frontend application is deployed to a provider of your choice (Netlify, Vercel, etc.). See [frontend README](frontend/README.md) for more information.
-
-> Please note deployment of smart contracts is done via `algokit deploy` command which can be invoked both via CI as seen on this project, or locally. For more information on how to use `algokit deploy` please see [AlgoKit documentation](https://github.com/algorandfoundation/algokit-cli/blob/main/docs/features/deploy.md).
+1. If you update to the latest source code and there are new dependencies, run `algokit bootstrap all` again.
+2. Follow the development steps above.
 
 ## Tools
 
-This project makes use of Python and React to build Algorand smart contracts and to provide a base project configuration to develop frontends for your Algorand dApps and interactions with smart contracts. The following tools are in use:
+This project utilizes Python, Algorand blockchain, AlgoKit, Beaker, PyTEAL, AlgoKit Utils, Poetry, Black, Ruff, mypy, pytest, and pip-audit.
 
-- Algorand, AlgoKit, and AlgoKit Utils
-- Python dependencies including Poetry, Black, Ruff or Flake8, mypy, pytest, and pip-audit
-- React and related dependencies including AlgoKit Utils, Tailwind CSS, daisyUI, use-wallet, npm, jest, playwright, Prettier, ESLint, and Github Actions workflows for build validation
+- [Algorand](https://www.algorand.com/): Layer 1 Blockchain.
+- [AlgoKit](https://github.com/algorandfoundation/algokit-cli): One-stop shop tool for Algorand developers.
+- [Beaker](https://github.com/algorand-devrel/beaker): Smart contract development framework for PyTeal.
+- [PyTEAL](https://github.com/algorand/pyteal): Python language binding for Algorand smart contracts.
+- [AlgoKit Utils](https://github.com/algorandfoundation/algokit-utils-py): Core Algorand utilities.
+- [Poetry](https://python-poetry.org/): Python packaging and dependency management.
+- [Black](https://github.com/psf/black): Python code formatter.
+- [Ruff](https://github.com/charliermarsh/ruff): Fast Python linter.
+- [mypy](https://mypy-lang.org/): Static type checker.
+- [pytest](https://docs.pytest.org/): Automated testing.
+- [pip-audit](https://pypi.org/project/pip-audit/): Tool for scanning Python environments for packages with known vulnerabilities.
 
-### VS Code
+For a productive development experience in VS Code, check the [.vscode](./.vscode) folder.
 
-It has also been configured to have a productive dev experience out of the box in [VS Code](https://code.visualstudio.com/), see the [backend .vscode](./backend/.vscode) and [frontend .vscode](./frontend/.vscode) folders for more details.
+## Inspiration
 
-## Integrating with smart contracts and application clients
+Algo-Starter is born from the ambition to make a positive impact on the Algorand network. As an initiative for the Impact track, we aim to revolutionize crowdfunding, offering a decentralized and transparent platform for global users.
 
-Refer to the [backend](backend/README.md) folder for overview of working with smart contracts, [frontend](frontend/README.md) for overview of the React project and the [frontend/contracts](frontend/src/contracts/README.md) folder for README on adding new smart contracts from backend as application clients on your frontend. The templates provided in these folders will help you get started.
-When you compile and generate smart contract artifacts, your frontend component will automatically generate typescript application clients from smart contract artifacts and move them to `frontend/src/contracts` folder, see [`generate:app-clients` in package.json](frontend/package.json). Afterwards, you are free to import and use them in your frontend application.
+## What's Next
 
-The frontend starter also provides an example of interactions with your GiverClient in [`AppCalls.tsx`](frontend/src/components/AppCalls.tsx) component by default.
+Having laid the software foundation and product requirements, the next steps for Algo-Starter involve rigorous testing, campaign promotion, and further community engagement. The focus is on iterating, optimizing, and establishing Algo-Starter as a leading decentralized crowdfunding initiative on the Algorand network.
 
-## Next Steps
+---
 
-You can take this project and customize it to build your own decentralized applications on Algorand. Make sure to understand how to use AlgoKit and how to write smart contracts for Algorand before you start.
+For guidance on the `smart_contracts` folder and adding new contracts to the project, refer to [README](smart_contracts/README.md).
