@@ -1,0 +1,19 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 0.5.1
+_src_path: gh:algorandfoundation/algokit-fullstack-template
+author_email: osasisorae@gmail.com
+author_name: Osarenren-Isorae
+cloud_provider: vercel
+contract_name: giver
+deployment_language: python
+ide_vscode: true
+preset_name: production
+project_name: algo-give
+python_linter: ruff
+use_dispenser: false
+use_github_actions: true
+use_python_black: true
+use_python_mypy: true
+use_python_pip_audit: true
+use_python_pytest: true
+
